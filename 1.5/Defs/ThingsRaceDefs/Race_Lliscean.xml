@@ -1,0 +1,1247 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- This is the Def that represents your race. -->
+	<!-- You can inherit from either "HumanRace" or "BasePawn" depending on what is easier to override. -->
+	<AlienRace.ThingDef_AlienRace ParentName="BasePawn" Name="BaseLliscean">
+
+		<!-- The defName of your Def must be unique across all mods. -->
+		<!-- It's recommended that you prefix this with your name or your mod's name to avoid collisions. -->
+		<!-- Examples include "Aelanna_Heruan" or "ARR_Miqote" -->
+		<defName>UpdatedLliscean</defName>
+		
+		<!-- This is the display name of your race that is shown in-game. -->
+		<!-- It actually does not need to be unique. -->
+		<label>Lliscean</label>
+
+		<!-- This is the description text that is shown when someone inspects a member of your race. -->
+		<description>Created due to a fad popular with the female population on a distant glitterworld, the Lliscean is a race of half-human half-deer people. Friendly and nature loving, those that get stranded on rimworlds generally settle into idyllic (at least for a time) tribal societies. The race is almost entirely female, with few very feminine males. They typically aren't too picky about the gender of their partner, caring more about the content of their character.</description>
+		
+		<!-- The following are all parts of the Humanoid Alien Race framework. -->
+		<!-- Please read the HAR Wiki at https://github.com/erdelf/AlienRaces/wiki to see what you can add here! -->
+		
+        <statBases>
+		
+            <MarketValue>2000</MarketValue>
+
+            <MoveSpeed>5.5</MoveSpeed>
+			<!--drawSize>1</drawSize-->
+            <PawnBeauty>1</PawnBeauty>
+			  <PlantWorkSpeed>1.3</PlantWorkSpeed>
+			  <PlantHarvestYield>1.2</PlantHarvestYield>
+			  <SocialImpact>1.2</SocialImpact>
+			  <NegotiationAbility>1.1</NegotiationAbility>
+			  <TradePriceImprovement>1.1</TradePriceImprovement>
+			  <TameAnimalChance>1.3</TameAnimalChance>
+			  <TrainAnimalChance>1.3</TrainAnimalChance>
+			  <AnimalGatherSpeed>1.3</AnimalGatherSpeed>
+
+            <ComfyTemperatureMin>10</ComfyTemperatureMin>
+            <ComfyTemperatureMax>36</ComfyTemperatureMax>
+            <!--MentalBreakThreshold>0.4</MentalBreakThreshold-->
+            <WorkSpeedGlobal>1</WorkSpeedGlobal>
+            <RoyalFavorValue>3</RoyalFavorValue>
+
+            <Mass>80</Mass>
+            <MeatAmount>80</MeatAmount>
+            <LeatherAmount>50</LeatherAmount>
+			
+        </statBases>
+		
+		        <tools>
+			
+			  <li>
+				<label>left fist</label>
+				<capacities>
+				  <li>Blunt</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>1.2</cooldownTime>
+				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+				<surpriseAttack>
+				  <extraMeleeDamages>
+					<li>
+					  <def>Stun</def>
+					  <amount>22</amount>
+					</li>
+				  </extraMeleeDamages>
+				</surpriseAttack>
+			  </li>
+			  <li>
+				<label>right fist</label>
+				<capacities>
+				  <li>Blunt</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>1.2</cooldownTime>
+				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+				<surpriseAttack>
+				  <extraMeleeDamages>
+					<li>
+					  <def>Stun</def>
+					  <amount>22</amount>
+					</li>
+				  </extraMeleeDamages>
+				</surpriseAttack>
+			  </li>
+			  <li>
+				<label>left hoof</label>
+				<capacities>
+				  <li>Blunt</li>
+				  <li>Poke</li>
+				</capacities>
+				<power>7</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>FrontLeftLeg</linkedBodyPartsGroup>
+			  </li>
+			  <li>
+				<label>right hoof</label>
+				<capacities>
+				  <li>Blunt</li>
+				  <li>Poke</li>
+				</capacities>
+				<power>7</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>FrontRightLeg</linkedBodyPartsGroup>
+			  </li>
+			  <li>
+				<label>teeth</label>
+				<capacities>
+				  <li>Bite</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+				<chanceFactor>0.5</chanceFactor>
+			  </li>
+			
+            </tools>
+			
+        <race>
+            <thinkTreeMain>Humanlike</thinkTreeMain>
+            <thinkTreeConstant>HumanlikeConstant</thinkTreeConstant>
+            <intelligence>Humanlike</intelligence>
+            <makesFootprints>true</makesFootprints>
+            <lifeExpectancy>80</lifeExpectancy>
+            <bloodDef>Filth_Blood</bloodDef>
+            <leatherDef>Leather_Human</leatherDef>
+            <nameCategory>HumanStandard</nameCategory>
+            <body>Lliscean_body</body>
+            <renderTree>Humanlike</renderTree>
+            <baseBodySize>0.9</baseBodySize>
+            <baseHealthScale>1</baseHealthScale>
+            <useMeatFrom>Human</useMeatFrom>
+            <hasGenders>true</hasGenders>
+            <foodType>OmnivoreHuman</foodType>
+            <gestationPeriodDays>18</gestationPeriodDays>
+            <meatMarketValue>0.8</meatMarketValue>
+            <manhunterOnDamageChance>0.20</manhunterOnDamageChance>
+            <manhunterOnTameFailChance>0.02</manhunterOnTameFailChance>
+            <soundCallIntervalRange>2000~5000</soundCallIntervalRange>
+            <canBecomeShambler>true</canBecomeShambler>
+            <knowledgeCategory MayRequire="Ludeon.RimWorld.Anomaly">Basic</knowledgeCategory>
+            <anomalyKnowledge>1</anomalyKnowledge>
+            <litterSizeCurve>
+                <points>
+                <li>(0.5, 0)</li>
+                <li>(1, 1)</li>
+                <li>(1.01, 0.02)</li>
+                <li>(3.5, 0)</li>
+                </points>
+            </litterSizeCurve>
+            <lifeStageAges>
+                <li>
+                  <def>HumanlikeBaby</def>
+                  <minAge>0</minAge>
+                </li>
+                <li>
+                  <def>HumanlikeChild</def>
+                  <minAge>3</minAge>
+                </li>
+                <li MayRequire="Ludeon.RimWorld.Biotech">
+                  <def>HumanlikePreTeenager</def>
+                  <minAge>9</minAge>
+                </li>
+                <li>
+                  <def>HumanlikeTeenager</def>
+                  <minAge>13</minAge>
+                </li>
+                <li>
+                  <def>HumanlikeAdult</def>
+                  <minAge>18</minAge>
+                </li>
+              </lifeStageAges>
+              <lifeStageWorkSettings MayRequire="Ludeon.RimWorld.Biotech">
+                <Firefighter>7</Firefighter>
+                <Patient>0</Patient>
+                <Doctor>10</Doctor>
+                <PatientBedRest>0</PatientBedRest>
+                <Childcare MayRequire="Ludeon.RimWorld.Biotech">0</Childcare>
+                <BasicWorker>3</BasicWorker>
+                <Warden>10</Warden>
+                <Handling>7</Handling>
+                <Cooking>7</Cooking>
+                <Hunting>7</Hunting>
+                <Construction>10</Construction>
+                <Growing>7</Growing>
+                <Mining>7</Mining>
+                <PlantCutting>7</PlantCutting>
+                <Smithing>13</Smithing>
+                <Tailoring>7</Tailoring>
+                <Art>10</Art>
+                <Crafting>7</Crafting>
+                <Hauling>3</Hauling>
+                <Cleaning>3</Cleaning>
+                <Research>13</Research>
+                <DarkStudy MayRequire="Ludeon.RimWorld.Anomaly">13</DarkStudy>
+              </lifeStageWorkSettings>
+              <soundMeleeDodge>Pawn_MeleeDodge</soundMeleeDodge>
+              <specialShadowData>
+                <volume>(0.3, 0.8, 0.4)</volume>
+                <offset>(0,0,-0.3)</offset>
+            </specialShadowData>
+            <ageGenerationCurve>
+                <points>
+                    <li MayRequire="Ludeon.RimWorld.Biotech">(0,0)</li>
+                    <li MayRequire="Ludeon.RimWorld.Biotech">(0.001,43)</li>
+                    <li MayRequire="Ludeon.RimWorld.Biotech">(8,86)</li>
+                    <li MayRequire="Ludeon.RimWorld.Biotech">(12.5,118)</li>  <!-- Exclude 12.5-13 years to avoid spawning pawns who are very close to becoming adults -->  
+                    <li MayRequire="Ludeon.RimWorld.Biotech">(12.51,0)</li>  
+                    <li MayRequire="Ludeon.RimWorld.Biotech">(13,0)</li>      
+                    <li MayRequire="Ludeon.RimWorld.Biotech">(13.001,122)</li><!-- End exclude -->
+                    <li MayRequire="Ludeon.RimWorld.Biotech">(13.999,130)</li>
+                    <li>(14,0)</li>
+                    <li MayRequire="Ludeon.RimWorld.Biotech">(14.001,130)</li>
+                    <li>(16,100)</li>
+                    <li>(50,100)</li>
+                    <li>(60,30)</li>
+                    <li>(70,18)</li>
+                    <li>(80,10)</li>
+                    <li>(90,3)</li>
+                    <li>(100,0)</li>
+                </points>
+            </ageGenerationCurve>
+            <hediffGiverSets>
+				<li>OrganicStandard</li>
+				<li>LlisceanStandard</li>
+				<li>Human</li>
+            </hediffGiverSets>
+        </race>
+        <recipes>
+		  <li>ExciseCarcinoma</li>
+		  <li>AdministerMechSerumHealer</li>
+		  <li>RemoveBodyPart</li>
+		  <li>Euthanize</li>
+		  <li>Anesthetize</li>
+        </recipes>
+        <ingredient>
+        <mergeCompatibilityTags>
+            <li>HumanMeat</li>
+        </mergeCompatibilityTags>
+        </ingredient>
+        <comps>
+            <li MayRequire="Ludeon.RimWorld.Anomaly" Class="CompProperties_HoldingPlatformTarget">
+                <baseEscapeIntervalMtbDays>120</baseEscapeIntervalMtbDays>
+                <getsColdContainmentBonus>true</getsColdContainmentBonus>
+            </li>
+            <li MayRequire="Ludeon.RimWorld.Anomaly" Class="CompProperties_Studiable">
+                <frequencyTicks>120000</frequencyTicks>
+                <minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+                <requiresImprisonment>true</requiresImprisonment>
+            </li>
+        </comps>
+		
+		<alienRace>
+			<generalSettings>
+			
+			<maleGenderProbability>0.2</maleGenderProbability>
+			<immuneToAge>false</immuneToAge>
+			<allowHumanBios>true</allowHumanBios>
+			<immuneToXenophobia>false</immuneToXenophobia>
+			<minAgeForAdulthood>13</minAgeForAdulthood>
+			<humanRecipeImport>true</humanRecipeImport>
+			<canLayDown>true</canLayDown>
+			<maxDamageForSocialfight>8</maxDamageForSocialfight>
+			
+				<growthAges>
+				  <li>7</li>
+				  <li>10</li>
+				  <li>13</li>
+				</growthAges>
+				
+				<!--traitCount>2~3</traitCount-->
+				<additionalTraits>1~2</additionalTraits>
+			
+				<forcedRaceTraitEntries>
+				  <li>
+					<options>
+					  <li>
+						<defName Degree="1">Beauty</defName>
+					  </li>
+					  <li>
+						<defName Degree="2">Beauty</defName>
+					  </li>
+					</options>
+					<count>1</count>
+					<chance>25</chance>
+				  </li>
+				  <li>
+					<defName>Nudist</defName>
+					<chance>25</chance>
+				  </li>
+				  <li>
+					<defName>Gay</defName>
+					<chance>15</chance>
+				  </li>
+				  <li>
+					<defName>Bisexual</defName>
+					<chance>70</chance>
+				  </li>
+				</forcedRaceTraitEntries>
+				
+				<disallowedTraits>
+				  <li>
+					<defName Degree="-2">Beauty</defName>
+				  </li>
+				  <li>
+					<defName Degree="1">Pyromaniac</defName>
+				  </li>
+				  <li>
+					<defName>Pyromaniac</defName>
+				  </li>
+				</disallowedTraits>
+				
+				   <alienPartGenerator>
+
+						  <colorChannels>
+							<li>
+							  <name>fur</name>
+							  <first Class="ColorGenerator_Options">
+								<options>
+								  <!-- == Brown == -->
+								  <li>
+									<weight>50</weight>
+									<only>RGBA(139,99,55,255)</only>
+								  </li>
+								  <li>
+									<weight>50</weight>
+									<only>RGBA(125,78,41,255)</only>
+								  </li>
+								  <li>
+									<weight>60</weight>
+									<only>RGBA(75,55,29,255)</only>
+								  </li>
+								  <li>
+									<weight>50</weight>
+									<only>RGBA(61,16,5,255)</only>
+								  </li>
+								  <li>
+									<weight>50</weight>
+									<only>RGBA(46,11,22,255)</only>
+								  </li>
+								  <!-- == Red == -->
+								  <li>
+									<weight>10</weight>
+									<only>RGBA(0.3,0.6,1,255)</only>
+								  </li>
+								  <li>
+									<weight>10</weight>
+									<only>RGBA(142,43,17,1,255)</only>
+								  </li>
+								  <li>
+									<weight>10</weight>
+									<only>RGBA(117,0,13,1,255)</only>
+								  </li>
+								  <li>
+									<weight>10</weight>
+									<only>RGBA(77,19,21,255)</only>
+								  </li>
+								  <!-- == Pink == -->
+								  <li>
+									<weight>5</weight>
+									<only>RGBA(242,90,102,1,255)</only>
+								  </li>
+								  <li>
+									<weight>5</weight>
+									<only>RGBA(209,210,211,255)</only>
+								  </li>
+								</options>
+							  </first>
+							</li>
+							<li>
+							  <name>dead</name>
+							  <first Class="ColorGenerator_Options">
+								<options>
+								  <!-- == Brown == -->
+								  <li>
+									<weight>100</weight>
+									<only>RGBA(210,210,210,255)</only>
+								  </li>
+								</options>
+							  </first>
+							</li>
+						  </colorChannels>
+						  
+						  <!--customDrawSize>(0.75, 0.75)</customDrawSize>
+						  <customHeadDrawSize>(0.75, 0.75)</customHeadDrawSize>
+						  <customPortraitDrawSize>(0.75, 0.75)</customPortraitDrawSize>
+						  <customPortraitHeadDrawSize>(0.75, 0.75)</customPortraitHeadDrawSize-->
+						  <headOffset>(0.0, -0.1)</headOffset>
+
+							<anchorReplacements>
+							  <li>
+								<originalTag>LeftEye</originalTag> 
+								<originalGroup>Torso</originalGroup>
+								<replacement> 
+								  <rotation>West</rotation>
+								  <tag>LeftEye</tag>
+								  <canMirror>false</canMirror>
+								  <range>0</range>
+								  <layer>Head</layer>
+								  <debugColor>(1,0,0,1)</debugColor>
+								</replacement>
+								<offsets> 
+																<south>
+																<bodyTypes>
+																	<Female>(0,-0.3)</Female>
+																	<Thin>(0,-0.3)</Thin>
+																	<Male>(0,-0.3)</Male>
+																	<Hulk>(0,-0.3)</Hulk>
+																	<Fat>(0,-0.3)</Fat>
+																	
+																	
+																</bodyTypes>
+															</south>
+															<east>
+																<bodyTypes>
+																	<Female>(0.2, 0.185)</Female>
+																	<Thin>(0.2, 0.185)</Thin>
+																	<Male>(0.2, 0.185)</Male>
+																	<Hulk>(0.2, 0.185)</Hulk>
+																	<Fat>(0.2, 0.185)</Fat>
+																</bodyTypes>
+															</east>
+															<west>
+																<bodyTypes>
+																	<Female>(-0.2, 0.185)</Female>
+																	<Thin>(-0.2, 0.185)</Thin>
+																	<Male>(-0.2, 0.185)</Male>
+																	<Hulk>(-0.2, 0.185)</Hulk>
+																	<Fat>(-0.2, 0.185)</Fat>
+																</bodyTypes>
+															</west>
+														</offsets>
+							  </li>
+								<li>
+								<originalTag>RightEye</originalTag> 
+								<originalGroup>Torso</originalGroup>
+								<replacement> 
+								  <rotation>South</rotation>
+								  <tag>RightEye</tag>
+								  <canMirror>false</canMirror>
+								  <range>0</range>
+								  <layer>Head</layer>
+								  <debugColor>(0,0,1,1)</debugColor>
+								</replacement>
+								<offsets> 
+																<south>
+																<bodyTypes>
+																	<Female>(-0.085,0.175)</Female>
+																	<Thin>(-0.085,0.175)</Thin>
+																	<Male>(-0.085,0.175)</Male>
+																	<Hulk>(-0.085,0.175)</Hulk>
+																	<Fat>(-0.085,0.175)</Fat>
+																</bodyTypes>
+															</south>
+															<east>
+																<bodyTypes>
+																	<Female>(0.2, 0.175)</Female>
+																	<Thin>(0.2, 0.175)</Thin>
+																	<Male>(0.2, 0.175)</Male>
+																	<Hulk>(0.2, 0.175)</Hulk>
+																	<Fat>(0.2, 0.175)</Fat>
+																</bodyTypes>
+															</east>
+															<west>
+																<bodyTypes>
+																	<Female>(-0.2, 0.185)</Female>
+																	<Thin>(-0.2, 0.185)</Thin>
+																	<Male>(-0.2, 0.185)</Male>
+																	<Hulk>(-0.2, 0.185)</Hulk>
+																	<Fat>(-0.2, 0.185)</Fat>
+																</bodyTypes>
+															</west>
+														</offsets>
+							  </li>
+							  <li>
+								<originalTag>LeftEye</originalTag> 
+								<originalGroup>Torso</originalGroup>
+								<replacement> 
+								  <rotation>South</rotation>
+								  <tag>LeftEye</tag>
+								  <canMirror>false</canMirror>
+								  <range>0</range>
+								  <layer>Head</layer>
+								  <debugColor>(1,0,0,1)</debugColor>
+								</replacement>
+								<offsets> 
+																<south>
+																<bodyTypes>
+																	<Female>(0.085,0.175)</Female>
+																	<Thin>(0.085,0.175)</Thin>
+																	<Male>(0.085,0.175)</Male>
+																	<Hulk>(0.085,0.175)</Hulk>
+																	<Fat>(0.085,0.175)</Fat>
+																</bodyTypes>
+															</south>
+															<east>
+																<bodyTypes>
+																	<Female>(0.2, 0.185)</Female>
+																	<Thin>(0.2, 0.185)</Thin>
+																	<Male>(0.2, 0.185)</Male>
+																	<Hulk>(0.2, 0.185)</Hulk>
+																	<Fat>(0.2, 0.185)</Fat>
+																</bodyTypes>
+															</east>
+															<west>
+																<bodyTypes>
+																	<Female>(-0.2, 0.185)</Female>
+																	<Thin>(-0.2, 0.185)</Thin>
+																	<Male>(-0.2, 0.185)</Male>
+																	<Hulk>(-0.2, 0.185)</Hulk>
+																	<Fat>(-0.2, 0.185)</Fat>
+																</bodyTypes>
+															</west>
+														</offsets>
+							  </li>
+								<li>
+								<originalTag>RightEye</originalTag> 
+								<originalGroup>Torso</originalGroup>
+								<replacement> 
+								  <rotation>East</rotation>
+								  <tag>RightEye</tag>
+								  <canMirror>false</canMirror>
+								  <range>0</range>
+								  <layer>Head</layer>
+								  <debugColor>(0,0,1,1)</debugColor>
+								</replacement>
+								<offsets> 
+																<south>
+																<bodyTypes>
+																	<Female>(0,-0.3)</Female>
+																	<Thin>(0,-0.3)</Thin>
+																	<Male>(0,-0.3)</Male>
+																	<Hulk>(0,-0.3)</Hulk>
+																	<Fat>(0,-0.3)</Fat>
+																</bodyTypes>
+															</south>
+															<east>
+																<bodyTypes>
+																	<Female>(0.2, 0.175)</Female>
+																	<Thin>(0.2, 0.175)</Thin>
+																	<Male>(0.2, 0.175)</Male>
+																	<Hulk>(0.2, 0.175)</Hulk>
+																	<Fat>(0.2, 0.175)</Fat>
+																</bodyTypes>
+															</east>
+															<west>
+																<bodyTypes>
+																	<Female>(-0.2, 0.185)</Female>
+																	<Thin>(-0.2, 0.185)</Thin>
+																	<Male>(-0.2, 0.185)</Male>
+																	<Hulk>(-0.2, 0.185)</Hulk>
+																	<Fat>(-0.2, 0.185)</Fat>
+																</bodyTypes>
+															</west>
+														</offsets>
+							  </li>
+							</anchorReplacements>
+
+						<headTypes>
+						  <li>Male_AverageNormal</li>
+						  <li>Male_AverageWide</li>
+						  <li>Male_AveragePointy</li>
+						  <li>Male_NarrowNormal</li>
+						  <li>Male_NarrowPointy</li>
+						  <li>Male_NarrowWide</li>
+						  <li>Female_AverageNormal</li>
+						  <li>Female_AverageWide</li>
+						  <li>Female_AveragePointy</li>
+						  <li>Female_NarrowNormal</li>
+						  <li>Female_NarrowPointy</li>
+						  <li>Female_NarrowWide</li>
+						</headTypes>
+						
+						<bodyTypes>
+						  <li>Female</li>
+						  <li>Thin</li>
+						  <!--li>Male</li>
+						  <li>Hulk</li>
+						  <li>Fat</li-->
+						  <li MayRequire="Ludeon.RimWorld.Biotech">Baby</li>
+						  <li MayRequire="Ludeon.RimWorld.Biotech">Child</li>
+						</bodyTypes>
+						
+						<oldHairAgeRange>65.0~85.0</oldHairAgeRange>
+
+							<bodyAddons>
+
+								<!--growthFactorByAge>
+								  <points>
+									<li>(0,1)</li>
+									<li>(6,1)</li>
+									<li>(7,0.75)</li>
+									<li>(13,0.75)</li>
+								  </points>
+								</growthFactorByAge-->
+								
+								   <li>
+									  <drawSize>1.1</drawSize>
+									  <path>Things/Pawn/Lliscean/Body/LlisceanBody2</path>
+											<conditions>
+												<BodyPart>
+												  <bodyPart>Body</bodyPart>
+												  <drawWithoutPart>false</drawWithoutPart>
+												</BodyPart>
+													<Posture>
+													  <drawnStanding>true</drawnStanding>
+													  <drawnLaying>true</drawnLaying>
+													  <drawnInBed>false</drawnInBed>
+													</Posture>
+													<RotStage>Fresh,Rotting</RotStage>
+											</conditions>
+									  <shaderType>Transparent</shaderType>
+									  <inFrontOfBody>true</inFrontOfBody>
+									  <colorChannel>fur</colorChannel>
+									  <defaultOffset>Tail</defaultOffset>
+									  <offsets>
+										<south>
+										<layerOffset>-0.31</layerOffset>
+										  <bodyTypes>
+											<Female>(-0.4115,0.0900)</Female>
+											<Thin>(-0.4115,0.0900)</Thin>
+											<Male>(-0.4115,0.0900)</Male>
+											<Hulk>(-0.4115,0.0900)</Hulk>
+											<Fat>(-0.4115,0.0900)</Fat>
+											<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.4115,0.0900)</Baby>
+											<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.4115,0.0900)</Child>
+										  </bodyTypes>
+										</south>
+										<north>
+										<!--> Numbers I did (Y)<-->
+										<layerOffset>-0.31</layerOffset>
+										  <bodyTypes>
+											<Female>(0,0.15)</Female>
+											<Thin>(0,0.15)</Thin>
+											<Male>(0,0.15)</Male>
+											<Hulk>(0,0.15)</Hulk>
+											<Fat>(0,0.15)</Fat>
+											<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.013,0.2245)</Baby>
+											<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.013,0.2245)</Child>
+										  </bodyTypes>
+										</north>
+										<east>
+										<layerOffset>-0.31</layerOffset>
+										  <bodyTypes>
+											<Female>(-0.0959,-0.0449)</Female>
+											<Thin>(-0.0959,-0.0449)</Thin>
+											<Male>(-0.0959,-0.0449)</Male>
+											<Hulk>(-0.0959,-0.0449)</Hulk>
+											<Fat>(-0.0959,-0.0449)</Fat>
+											<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.0959,-0.0449)</Baby>
+											<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.0959,-0.0449)</Child>
+										  </bodyTypes>
+										</east>
+									  </offsets>
+									</li>
+									<li>
+									  <drawSize>1.1</drawSize>
+									  <path>Things/Pawn/Lliscean/Body/LlisceanBody</path>
+											<conditions>
+												<BodyPart>
+												  <bodyPart>Body</bodyPart>
+												  <drawWithoutPart>false</drawWithoutPart>
+												</BodyPart>
+													<Posture>
+													  <drawnStanding>true</drawnStanding>
+													  <drawnLaying>true</drawnLaying>
+													  <drawnInBed>false</drawnInBed>
+													</Posture>
+													<RotStage>Fresh,Rotting</RotStage>
+											</conditions>
+									  <shaderType>Transparent</shaderType>
+									  <inFrontOfBody>true</inFrontOfBody>
+									  <colorChannel>fur</colorChannel>
+									  <defaultOffset>Tail</defaultOffset>
+									  <offsets>
+										<south>
+										<layerOffset>-0.289</layerOffset>
+										  <bodyTypes>
+											<Female>(-0.4115,0.0900)</Female>
+											<Thin>(-0.4115,0.0900)</Thin>
+											<Male>(-0.4115,0.0900)</Male>
+											<Hulk>(-0.4115,0.0900)</Hulk>
+											<Fat>(-0.4115,0.0900)</Fat>
+											<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.4115,0.0900)</Baby>
+											<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.4115,0.0900)</Child>
+										  </bodyTypes>
+										</south>
+										<north>
+										<!--> Numbers I did (Y)<-->
+										<layerOffset>-0.289</layerOffset>
+										  <bodyTypes>
+											<Female>(0,0.15)</Female>
+											<Thin>(0,0.15)</Thin>
+											<Male>(0,0.15)</Male>
+											<Hulk>(0,0.15)</Hulk>
+											<Fat>(0,0.15)</Fat>
+											<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.013,0.2245)</Baby>
+											<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.013,0.2245)</Child>
+										  </bodyTypes>
+										</north>
+										<east>
+										<layerOffset>-0.289</layerOffset>
+										  <bodyTypes>
+											<Female>(-0.0959,-0.0449)</Female>
+											<Thin>(-0.02250804,-0.0449)</Thin>
+											<Male>(-0.0959,-0.0449)</Male>
+											<Hulk>(-0.0959,-0.0449)</Hulk>
+											<Fat>(-0.0959,-0.0449)</Fat>
+											<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.0959,-0.0449)</Baby>
+											<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.0959,-0.0449)</Child>
+										  </bodyTypes>
+										</east>
+									  </offsets>
+									</li>  
+
+										<!--> update for baby and child still needs work on adults still get 2 bodys for some reason <-->
+									
+										   <!--li>
+											  <drawSize>0.5</drawSize>
+											  <path>Lliscean/Body/LlisceanBody2</path>
+													<conditions>
+														<BodyPart>
+														  <bodyPart>Body</bodyPart>
+														  <drawWithoutPart>false</drawWithoutPart>
+														</BodyPart>
+															<Posture>
+															  <drawnStanding>true</drawnStanding>
+															  <drawnLaying>true</drawnLaying>
+															  <drawnInBed>false</drawnInBed>
+															</Posture>
+															<RotStage>Fresh,Rotting</RotStage>
+													</conditions>
+											  <shaderType>Transparent</shaderType>
+											  <inFrontOfBody>true</inFrontOfBody>
+											  <colorChannel>fur</colorChannel>
+											  <defaultOffset>Tail</defaultOffset>
+											  <offsets>
+												<south>
+												<layerOffset>-0.31</layerOffset>
+												  <bodyTypes>
+													<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.4115,0.0900)</Baby>
+													<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.4115,0.0900)</Child>
+												  </bodyTypes>
+												</south>
+												<north>
+												<layerOffset>-0.31</layerOffset>
+												  <bodyTypes>
+													<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.013,0.2245)</Baby>
+													<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.013,0.2245)</Child>
+												  </bodyTypes>
+												</north>
+												<east>
+												<layerOffset>-0.31</layerOffset>
+												  <bodyTypes>
+													<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.0959,-0.0449)</Baby>
+													<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.0959,-0.0449)</Child>
+												  </bodyTypes>
+												</east>
+											  </offsets>
+											</li>
+											<li>
+											  <drawSize>0.5</drawSize>
+											  <path>Lliscean/Body/LlisceanBody</path>
+													<conditions>
+														<BodyPart>
+														  <bodyPart>Body</bodyPart>
+														  <drawWithoutPart>false</drawWithoutPart>
+														</BodyPart>
+															<Posture>
+															  <drawnStanding>true</drawnStanding>
+															  <drawnLaying>true</drawnLaying>
+															  <drawnInBed>false</drawnInBed>
+															</Posture>
+															<RotStage>Fresh,Rotting</RotStage>
+													</conditions>
+											  <shaderType>Transparent</shaderType>
+											  <inFrontOfBody>true</inFrontOfBody>
+											  <colorChannel>fur</colorChannel>
+											  <defaultOffset>Tail</defaultOffset>
+											  <offsets>
+												<south>
+												<layerOffset>-0.289</layerOffset>
+												  <bodyTypes>
+													<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.4115,0.0900)</Baby>
+													<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.4115,0.0900)</Child>
+												  </bodyTypes>
+												</south>
+												<north>
+												<layerOffset>-0.289</layerOffset>
+												  <bodyTypes>
+													<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.013,0.2245)</Baby>
+													<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.013,0.2245)</Child>
+												  </bodyTypes>
+												</north>
+												<east>
+												<layerOffset>-0.289</layerOffset>
+												  <bodyTypes>
+													<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.0959,-0.0449)</Baby>
+													<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.0959,-0.0449)</Child>
+												  </bodyTypes>
+												</east>
+											  </offsets>
+											</li>       								
+													<li>
+													  <drawSize>0.5</drawSize>
+													  <path>Lliscean/Body/Patterns/LlisceanBodyPattern</path>
+															<conditions>
+																<BodyPart>
+																  <bodyPart>Body</bodyPart>
+																  <drawWithoutPart>false</drawWithoutPart>
+																</BodyPart>
+																	<Posture>
+																	  <drawnStanding>true</drawnStanding>
+																	  <drawnLaying>true</drawnLaying>
+																	  <drawnInBed>false</drawnInBed>
+																	</Posture>
+																	<RotStage>Fresh,Rotting</RotStage>
+															</conditions>
+													  <shaderType>Transparent</shaderType>
+													  <inFrontOfBody>true</inFrontOfBody>
+													  <colorChannel>base</colorChannel>
+													  <layerInvert>false</layerInvert>
+													  <defaultOffset>Tail</defaultOffset>
+													  <offsets>
+														<south>
+														<layerOffset>-0.289</layerOffset>
+														  <bodyTypes>
+															<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.4115,0.0900)</Baby>
+															<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.4115,0.0900)</Child>
+														  </bodyTypes>
+														</south>
+														<north>
+														<layerOffset>-0.289</layerOffset>
+														  <bodyTypes>
+															<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.013,0.2245)</Baby>
+															<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.013,0.2245)</Child>
+														  </bodyTypes>
+														</north>
+														<east>
+														<layerOffset>-0.289</layerOffset>
+														  <bodyTypes>
+															<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.0959,-0.0449)</Baby>
+															<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.0959,-0.0449)</Child>
+														  </bodyTypes>
+														</east>
+													  </offsets>
+													</li-->
+													
+													
+													<li>
+													  <drawSize>1.1</drawSize>
+													  <path>Things/Pawn/Lliscean/Body/Patterns/LlisceanBodyPattern</path>
+															<conditions>
+																<BodyPart>
+																  <bodyPart>Body</bodyPart>
+																  <drawWithoutPart>false</drawWithoutPart>
+																</BodyPart>
+																	<Posture>
+																	  <drawnStanding>true</drawnStanding>
+																	  <drawnLaying>true</drawnLaying>
+																	  <drawnInBed>false</drawnInBed>
+																	</Posture>
+																	<RotStage>Fresh,Rotting</RotStage>
+															</conditions>
+													  <shaderType>Transparent</shaderType>
+													  <inFrontOfBody>true</inFrontOfBody>
+													  <colorChannel>base</colorChannel>
+													  <layerInvert>false</layerInvert>
+													  <defaultOffset>Tail</defaultOffset>
+													  <offsets>
+														<south>
+														<layerOffset>-0.289</layerOffset>
+														  <bodyTypes>
+															<Female>(-0.4115,0.0900)</Female>
+															<Thin>(-0.4115,0.0900)</Thin>
+															<Male>(-0.4115,0.0900)</Male>
+															<Hulk>(-0.4115,0.0900)</Hulk>
+															<Fat>(-0.4115,0.0900)</Fat>
+															<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.4115,0.0900)</Baby>
+															<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.4115,0.0900)</Child>
+														  </bodyTypes>
+														</south>
+														<north>
+														<!--> Numbers I did (Y)<-->
+														<layerOffset>-0.289</layerOffset>
+														  <bodyTypes>
+															<Female>(0,0.15)</Female>
+															<Thin>(0,0.15)</Thin>
+															<Male>(0,0.15)</Male>
+															<Hulk>(0,0.15)</Hulk>
+															<Fat>(0,0.15)</Fat>
+															<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.013,0.2245)</Baby>
+															<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.013,0.2245)</Child>
+														  </bodyTypes>
+														</north>
+														<east>
+														<layerOffset>-0.289</layerOffset>
+														  <bodyTypes>
+															<Female>(-0.0959,-0.0449)</Female>
+															<Thin>(-0.02250804,-0.0449)</Thin>
+															<Male>(-0.0959,-0.0449)</Male>
+															<Hulk>(-0.0959,-0.0449)</Hulk>
+															<Fat>(-0.0959,-0.0449)</Fat>
+															<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.0959,-0.0449)</Baby>
+															<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.0959,-0.0449)</Child>
+														  </bodyTypes>
+														</east>
+													  </offsets>
+													</li>											
+									<li>
+									  <drawSize>0.75</drawSize>
+									  <path>Things/Pawn/Lliscean/Body/LlTail</path>
+											<conditions>
+												<BodyPart>
+												  <bodyPart>Tail</bodyPart>
+												  <drawWithoutPart>false</drawWithoutPart>
+												</BodyPart>
+													<Posture>
+													  <drawnStanding>true</drawnStanding>
+													  <drawnLaying>true</drawnLaying>
+													  <drawnInBed>false</drawnInBed>
+													</Posture>
+													<RotStage>Fresh,Rotting</RotStage>
+											</conditions>
+									  <inFrontOfBody>false</inFrontOfBody>
+									  <colorChannel>fur</colorChannel>
+									  <defaultOffset>Tail</defaultOffset>
+									  <offsets>
+										<south>
+										<layerOffset>-0.288</layerOffset>
+										  <bodyTypes>
+											<Female>(0,0)</Female>
+											<Thin>(0,0)</Thin>
+											<Male>(0,0)</Male>
+											<Hulk>(0,0)</Hulk>
+											<Fat>(0,0)</Fat>
+											<Baby MayRequire="Ludeon.RimWorld.Biotech">(0,0)</Baby>
+											<Child MayRequire="Ludeon.RimWorld.Biotech">(0,0)</Child>
+										  </bodyTypes>
+										</south>
+										<north>
+										<!--> Numbers I did (Y)<-->
+										<layerOffset>-0.255</layerOffset>
+										  <bodyTypes>
+											<Female>(0,-0.65)</Female>
+											<Thin>(0,-0.65)</Thin>
+											<Male>(0,-0.65)</Male>
+											<Hulk>(0,-0.65)</Hulk>
+											<Fat>(0,-0.65)</Fat>
+											<Baby MayRequire="Ludeon.RimWorld.Biotech">(0,-0.5407)</Baby>
+											<Child MayRequire="Ludeon.RimWorld.Biotech">(0,-0.5407)</Child>
+										  </bodyTypes>
+										</north>
+										<east>
+										<!--> Numbers I did (Thin)<-->
+										<layerOffset>-0.255</layerOffset>
+										  <bodyTypes>
+											<Female>(0.9107,-0.3313)</Female>
+											<Thin>(1,-0.3313)</Thin>
+											<Male>(0.9107,-0.3313)</Male>
+											<Hulk>(0.9107,-0.3313)</Hulk>
+											<Fat>(0.9107,-0.3313)</Fat>
+											<Baby MayRequire="Ludeon.RimWorld.Biotech">(0.9107,-0.3313)</Baby>
+											<Child MayRequire="Ludeon.RimWorld.Biotech">(0.9107,-0.3313)</Child>
+										  </bodyTypes>
+										</east>
+									  </offsets>
+									</li>
+									<li>
+									  <drawSize>.65</drawSize>
+									  <path>Things/Pawn/Lliscean/Body/Ears/EarLeft</path>
+											<conditions>
+												<BodyPart>
+												  <bodyPartLabel>left ear</bodyPartLabel>
+												  <drawWithoutPart>false</drawWithoutPart>
+												</BodyPart>
+													<Apparel>
+													  <hiddenUnderApparelFor>
+														<li>FullHead</li>
+													  </hiddenUnderApparelFor>
+													</Apparel>
+													<RotStage>Fresh,Rotting</RotStage>
+											</conditions>
+									  <inFrontOfBody>true</inFrontOfBody>
+									  <colorChannel>fur</colorChannel>
+									  <layerInvert>false</layerInvert>
+									  <defaultOffset>Tail</defaultOffset>
+									  <offsets>
+										<south>
+										  <bodyTypes>
+											<Male>(-0.475,.62)</Male>
+											<Female>(-0.475,.62)</Female>
+											<Thin>(-0.475,.62)</Thin>
+											<Hulk>(-0.475,.62)</Hulk>
+											<Fat>(-0.475,.62)</Fat>
+											<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.475,.62)</Baby>
+											<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.475,.62)</Child>
+										  </bodyTypes>
+										  <portraitBodyTypes>
+											<Male>(-0.45,.62)</Male>
+											<Female>(-0.45,.62)</Female>
+											<Thin>(-0.45,.62)</Thin>
+											<Hulk>(-0.45,.62)</Hulk>
+											<Fat>(-0.45,.62)</Fat>
+											<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.45,.62)</Baby>
+											<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.45,.62)</Child>
+										  </portraitBodyTypes>
+										</south>
+										<north>
+										  <bodyTypes>
+											<Male>(0.05,.93)</Male>
+											<Female>(0.05,.93)</Female>
+											<Thin>(0.05,.93)</Thin>
+											<Hulk>(0.05,.93)</Hulk>
+											<Fat>(0.05,.93)</Fat>
+											<Baby MayRequire="Ludeon.RimWorld.Biotech">(0.05,.93)</Baby>
+											<Child MayRequire="Ludeon.RimWorld.Biotech">(0.05,.93)</Child>
+										  </bodyTypes>
+										  <portraitBodyTypes>
+											<Male>(-0.04,.84)</Male>
+											<Female>(-0.04,.84)</Female>
+											<Thin>(-0.04,.84)</Thin>
+											<Hulk>(-0.04,.84)</Hulk>
+											<Fat>(-0.04,.84)</Fat>
+											<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.04,.84)</Baby>
+											<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.04,.84)</Child>
+										  </portraitBodyTypes>
+										</north>
+										<east>
+										  <bodyTypes>
+											<Male>(-0.44,.7)</Male>
+											<Female>(-0.44,.7)</Female>
+											<Thin>(-0.44,.7)</Thin>
+											<Hulk>(-0.44,.7)</Hulk>
+											<Fat>(-0.44,.7)</Fat>
+											<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.44,0.4726688)</Baby>
+											<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.44,0.4726688)</Child>
+										  </bodyTypes>
+										  <portraitBodyTypes>
+											<Male>(-0.44,.53)</Male>
+											<Female>(-0.44,.53)</Female>
+											<Thin>(-0.44,.53)</Thin>
+											<Hulk>(-0.44,.53)</Hulk>
+											<Fat>(-0.44,.53)</Fat>
+											<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.44,.53)</Baby>
+											<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.44,.53)</Child>
+										  </portraitBodyTypes>
+										</east>
+									  </offsets>
+									</li>
+									<li>
+									  <drawSize>.65</drawSize>
+									  <path>Things/Pawn/Lliscean/Body/Ears/EarRight</path>
+											<conditions>
+												<BodyPart>
+												  <bodyPartLabel>right ear</bodyPartLabel>
+												  <drawWithoutPart>false</drawWithoutPart>
+												</BodyPart>
+													<Apparel>
+													  <hiddenUnderApparelFor>
+														<li>FullHead</li>
+													  </hiddenUnderApparelFor>
+													</Apparel>
+													<RotStage>Fresh,Rotting</RotStage>
+											</conditions>
+									  <inFrontOfBody>true</inFrontOfBody>
+									  <colorChannel>fur</colorChannel>
+									  <layerInvert>false</layerInvert>
+									  <defaultOffset>Tail</defaultOffset>
+									  <offsets>
+										<south>
+										  <bodyTypes>
+											<Male>(-0.375,.62)</Male>
+											<Female>(-0.375,.62)</Female>
+											<Thin>(-0.375,.62)</Thin>
+											<Hulk>(-0.375,.62)</Hulk>
+											<Fat>(-0.375,.62)</Fat>
+											<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.375,.62)</Baby>
+											<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.375,.62)</Child>
+										  </bodyTypes>
+										  <portraitBodyTypes>
+											<Male>(-0.4,.62)</Male>
+											<Female>(-0.4,.62)</Female>
+											<Thin>(-0.4,.62)</Thin>
+											<Hulk>(-0.4,.62)</Hulk>
+											<Fat>(-0.4,.62)</Fat>
+											<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.4,.62)</Baby>
+											<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.4,.62)</Child>
+										  </portraitBodyTypes>
+										</south>
+										<north>
+										  <bodyTypes>
+											<Male>(-0.038,.93)</Male>
+											<Female>(-0.038,.93)</Female>
+											<Thin>(-0.038,.93)</Thin>
+											<Hulk>(-0.038,.93)</Hulk>
+											<Fat>(-0.038,.93)</Fat>
+											<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.038,.93)</Baby>
+											<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.038,.93)</Child>
+										  </bodyTypes>
+										  <portraitBodyTypes>
+											<Male>(-0.01,.95)</Male>
+											<Female>(-0.01,.95)</Female>
+											<Thin>(-0.01,.95)</Thin>
+											<Hulk>(-0.01,.95)</Hulk>
+											<Fat>(-0.01,.95)</Fat>
+											<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.01,.95)</Baby>
+											<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.01,.95)</Child>
+										  </portraitBodyTypes>
+										</north>
+										<east>
+										  <bodyTypes>
+											<Male>(-0.44,.7)</Male>
+											<Female>(-0.44,.7)</Female>
+											<Thin>(-0.44,.7)</Thin>
+											<Hulk>(-0.44,.7)</Hulk>
+											<Fat>(-0.44,.7)</Fat>
+											<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.44,0.4726688)</Baby>
+											<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.44,0.4726688)</Child>
+										  </bodyTypes>
+										  <portraitBodyTypes>
+											<Male>(-0.44,.53)</Male>
+											<Female>(-0.44,.53)</Female>
+											<Thin>(-0.44,.53)</Thin>
+											<Hulk>(-0.44,.53)</Hulk>
+											<Fat>(-0.44,.53)</Fat>
+											<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.44,.53)</Baby>
+											<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.44,.53)</Child>
+										  </portraitBodyTypes>
+										</east>
+									  </offsets>
+									</li>
+									<li>
+									  <drawSize>0.8</drawSize>
+									  <!-->despite useing <rotstage> as a condition the game feels like it need to show it even when a pawn
+									  is alive so im just going to hide it with the deer body<-->
+									  <path>Things/Pawn/Animal/Deer/Dessicated_DeerFemale</path>
+										<conditions>
+												<RotStage>Dessicated</RotStage>
+												<Age>HumanlikeAdult</Age>
+												<BodyPart>
+												  <bodyPart>Body</bodyPart>
+												  <drawWithoutPart>false</drawWithoutPart>
+												</BodyPart>
+										</conditions>
+									  <!--shaderType>Transparent</shaderType-->
+									  <inFrontOfBody>true</inFrontOfBody>
+									  <colorChannel>dead</colorChannel>
+									  <defaultOffset>Tail</defaultOffset>
+									  <offsets>
+										<south>
+										<layerOffset>-1</layerOffset>
+										  <bodyTypes>
+											<Female>(-0.4115,0.0900)</Female>
+											<Thin>(-0.4115,0.0900)</Thin>
+											<Male>(-0.4115,0.0900)</Male>
+											<Hulk>(-0.4115,0.0900)</Hulk>
+											<Fat>(-0.4115,0.0900)</Fat>
+											<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.4115,0.0900)</Baby>
+											<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.4115,0.0900)</Child>
+										  </bodyTypes>
+										</south>
+										<north>
+										<layerOffset>1</layerOffset>
+										  <bodyTypes>
+											<Female>(-0.013,0.2245)</Female>
+											<Thin>(-0.013,0.2245)</Thin>
+											<Male>(-0.013,0.2245)</Male>
+											<Hulk>(-0.013,0.2245)</Hulk>
+											<Fat>(-0.013,0.2245)</Fat>
+											<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.013,0.2245)</Baby>
+											<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.013,0.2245)</Child>
+										  </bodyTypes>
+										</north>
+										<east>
+										<layerOffset>-1</layerOffset>
+										  <bodyTypes>
+											<Female>(0.05466238,-0.0449)</Female>
+											<Thin>(0.05466238,-0.0449)</Thin>
+											<Male>(0.05466238,-0.0449)</Male>
+											<Hulk>(0.05466238,-0.0449)</Hulk>
+											<Fat>(0.05466238,-0.0449)</Fat>
+											<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.0959,-0.0449)</Baby>
+											<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.0959,-0.0449)</Child>
+										  </bodyTypes>
+										</east>
+									  </offsets>
+									</li>
+							</bodyAddons>
+
+				   </alienPartGenerator>
+			
+			</generalSettings>
+			<graphicPaths>
+			
+				<!--skeleton>
+				  <path>Things/Pawn/Animal/Deer/Dessicated_DeerFemale</path>
+				</skeleton-->
+		
+			</graphicPaths>
+			<styleSettings>
+			
+			</styleSettings>
+			<thoughtSettings>
+
+				<cannotReceiveThoughts>
+				  <li>SleptOnGround</li>
+				  <li>Naked</li>
+				</cannotReceiveThoughts>
+
+			</thoughtSettings>
+			<relationSettings>
+			
+			</relationSettings>
+			<raceRestriction>
+			
+				<blackEndoCategories>
+				  <li>BodyType</li>
+				</blackEndoCategories>
+			
+				<!--whiteGeneTags>
+				  <li>HairStyle</li>
+				  <li>BeardStyle</li>
+				  <li>Voice</li>
+				</whiteGeneTags-->
+			
+				<whiteGeneList>
+				  <li>Skin_Melanin1</li>
+				  <li>Skin_Melanin2</li>
+				  <li>Skin_Melanin3</li>
+				  <li>Skin_Melanin4</li>
+				  <li>Skin_Melanin5</li>
+				  <li>Skin_Melanin6</li>
+				  <li>Skin_Melanin7</li>
+				  <li>Skin_Melanin8</li>
+				  <li>Skin_Melanin9</li>
+				</whiteGeneList>
+				
+			</raceRestriction>
+			<compatibility>
+			
+			</compatibility>
+		</alienRace>
+	</AlienRace.ThingDef_AlienRace>
+
+</Defs>

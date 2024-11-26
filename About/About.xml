@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ModMetaData>
+
+	<name>UpdatedLliscean</name>
+	<author>Diana(Kitty), disDog</author>
+	<packageId>disDog.Lliscean</packageId>
+		
+	<modVersion>1.00</modVersion>
+	<supportedVersions>
+		<li>1.5</li>
+	</supportedVersions>
+	
+	<description>
+	
+Version 1.00
+5/14/24
+
+ An update for Lliscean to 1.5.
+ 
+ Hailing from a distant glitterworld where genetic modification allowed their creation, those that get stranded on rimworlds often settle into idyllic (for a time at least) tribal societies. They are renown for their skill with plants and animals... and maybe more...
+ 
+	</description>
+	
+	<modDependencies>
+		<li>
+			<packageId>erdelf.HumanoidAlienRaces</packageId>
+			<displayName>HumanoidAlienRaces</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=839005762</steamWorkshopUrl>
+		</li>
+		<!--li>
+		
+			<packageId>Ludeon.RimWorld.Biotech</packageId>
+			<displayName>Biotech</displayName>
+			
+		</li-->
+	</modDependencies>
+	
+	<loadAfter>
+		<li>Ludeon.RimWorld</li>
+		<li>Ludeon.RimWorld.Royalty</li>
+		<li>Ludeon.RimWorld.Ideology</li>
+		<li>Ludeon.RimWorld.Biotech</li>
+		<li>brrainz.harmony</li>
+		<li>erdelf.HumanoidAlienRaces</li>
+	</loadAfter>
+
+</ModMetaData>
